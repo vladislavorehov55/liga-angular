@@ -1,0 +1,20 @@
+<form class="container">
+  <input placeholder="Поиск"
+         [(ngModel)]="inputValue"
+         name="search-value"
+         class="input"
+  >
+  <div>
+    <select [(ngModel)]="selectedValue" name="select-value">
+      <option [value]="''" >без</option>
+      <option [value]="'ordinary'">обычные</option>
+      <option [value]="'important'">важные</option>
+      <option [value]="'completed'">выполненные</option>
+    </select>
+  </div>
+  <div class="btnsWrapper">
+    <button class="btn" (click)="search()">Поиск</button>
+    <button class="btn" (click)="cancelSearch()">Отменить</button>
+  </div>
+
+</form>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PageComponent } from './page.component';
 import {RecordsListModule} from "../records-list/records-list.module";
 import {AddFormModule} from "../add-form/add-form.module";
+import {SearchPanelModule} from "../search-panel/search-panel.module";
 
 
 
@@ -13,7 +14,8 @@ import {AddFormModule} from "../add-form/add-form.module";
   imports: [
     CommonModule,
     RecordsListModule,
-    AddFormModule
+    AddFormModule,
+    SearchPanelModule
   ],
   exports: [
     PageComponent

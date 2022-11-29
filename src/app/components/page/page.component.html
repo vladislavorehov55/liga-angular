@@ -1,5 +1,8 @@
 <div class="container">
-  <app-records-list [records]="recordService.records"></app-records-list>
+  <app-search-panel (searchEvent)="searchRecords($event)"
+                    (cancelSearchEvent)="cancelSearchRecords()"
+  ></app-search-panel>
+  <app-records-list [records]="recordService.currentRecords"></app-records-list>
   <app-add-form (addEvent)="addTask($event)"></app-add-form>
 </div>
 
