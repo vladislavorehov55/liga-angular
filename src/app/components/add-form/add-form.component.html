@@ -1,0 +1,8 @@
+<form (submit)="addTask($event)" class="container">
+  <input placeholder="Введете новое дело"
+         name="task" [(ngModel)]="taskValue"
+         class="input"
+  >
+  <button class="btnSearch">Добавить</button>
+</form>
+

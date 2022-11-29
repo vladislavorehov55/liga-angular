@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {RecordsListModule} from "./components/records-list/records-list.module";
+import {PageModule} from "./components/page/page.module";
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import {RecordsListModule} from "./components/records-list/records-list.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RecordsListModule,
+    PageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

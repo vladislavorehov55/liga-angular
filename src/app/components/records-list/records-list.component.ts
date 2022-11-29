@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import {RecordService} from "../../services/record.service";
+import { Component, OnInit, Input } from '@angular/core';
+import {RecordItem} from "../../models/record";
 
 @Component({
   selector: 'app-records-list',
   templateUrl: './records-list.component.html',
   styleUrls: ['./records-list.component.scss'],
-  providers: [RecordService]
 })
 export class RecordsListComponent implements OnInit{
   ngOnInit() {}
-  constructor(public recordService: RecordService) {}
+  constructor() {}
+  @Input()
+  records!: Array<RecordItem>
 }
 

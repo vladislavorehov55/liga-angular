@@ -1,0 +1,23 @@
+.container {
+  padding: 30px 10px 10px;
+}
+.input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.btnSearch {
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+}
