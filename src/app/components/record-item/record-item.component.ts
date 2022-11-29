@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {records} from "../../data/records";
+import {Component, Input, OnInit} from '@angular/core';
+import {RecordItem} from "../../models/record";
 
 @Component({
   selector: 'app-record-item',
@@ -7,7 +7,8 @@ import {records} from "../../data/records";
   styleUrls: ['./record-item.component.scss']
 })
 export class RecordItemComponent implements OnInit{
-  record = records[0]
-  ngOnInit() {
-  }
+  @Input()
+  record!: RecordItem
+
+  ngOnInit() { }
 }
