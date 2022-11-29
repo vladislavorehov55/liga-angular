@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {records} from "../../data/records";
+import {RecordService} from "../../services/record.service";
 
 @Component({
   selector: 'app-records-list',
   templateUrl: './records-list.component.html',
-  styleUrls: ['./records-list.component.scss']
+  styleUrls: ['./records-list.component.scss'],
+  providers: [RecordService]
 })
 export class RecordsListComponent implements OnInit{
-  ngOnInit() {
-  }
-  records = records
+  ngOnInit() {}
+  constructor(public recordService: RecordService) {}
 }
 

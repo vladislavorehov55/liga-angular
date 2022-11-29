@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {RecordItemModule} from "./components/record-item/record-item.module";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {RecordsListModule} from "./components/records-list/records-list.module";
 
 @NgModule({
@@ -13,9 +11,10 @@ import {RecordsListModule} from "./components/records-list/records-list.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RecordsListModule
+    RecordsListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

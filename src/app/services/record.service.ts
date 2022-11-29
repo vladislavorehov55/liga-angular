@@ -1,10 +1,7 @@
-import {Injectable} from '@angular/core';
 import {records} from "../data/records";
 import {Status} from "../models/record";
 
-@Injectable({
-  providedIn: 'root'
-})
+
 export class RecordService {
   records = records
   constructor() { }
