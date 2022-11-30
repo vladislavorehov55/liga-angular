@@ -13,7 +13,8 @@ export class RecordsListComponent implements OnInit{
   records!: Array<RecordItem>
   @Output()
   changeStatusEvent = new EventEmitter()
-
+  @Output()
+  deleteRecordEvent = new EventEmitter()
   editStatus(obj: {newStatus: Status, id: number}) {
     this.changeStatusEvent.emit(obj)
   }

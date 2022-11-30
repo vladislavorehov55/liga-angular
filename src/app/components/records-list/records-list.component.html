@@ -1,7 +1,13 @@
 <div *ngFor="let record of records" class="recordItemContainer">
   <app-record-item  [record]="record"></app-record-item>
-  <app-select [statusRecord]="record.status"
-              (changeStatusEvent)="editStatus({newStatus: $event, id: record.id})"
-  ></app-select>
+  <div class="btnsBlock">
+    <app-select [statusRecord]="record.status"
+                (changeStatusEvent)="editStatus({newStatus: $event, id: record.id})"
+    ></app-select>
+    <div class="imgWrap" (click)="deleteRecordEvent.emit(record.id)" >
+      <img class="img" src="./assets/delete-icon.png" alt="delete-icon">
+    </div>
+  </div>
+
 </div>
 

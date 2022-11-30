@@ -4,3 +4,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.btnsBlock {
+  display: flex;
+  align-items: center;
+}
+.imgWrap {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  cursor: pointer;
+}
+.img {
+  width: 100%;
+}

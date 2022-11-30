@@ -4,6 +4,7 @@
   ></app-search-panel>
   <app-records-list [records]="recordService.currentRecords"
                     (changeStatusEvent)="editRecordStatus($event)"
+                    (deleteRecordEvent)="deleteRecord($event)"
   >
   </app-records-list>
   <app-add-form (addEvent)="addTask($event)"></app-add-form>

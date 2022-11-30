@@ -23,4 +23,7 @@ export class PageComponent implements OnInit {
   editRecordStatus(obj: {newStatus: Status, id: number}) {
     this.recordService.editRecordStatus(obj)
   }
+  deleteRecord(id: number) {
+    this.recordService.deleteRecord(id)
+  }
 }
