@@ -16,7 +16,7 @@ export class RecordService {
   }
 
   addRecord(text: string) {
-    this.records = [{id: Date.now(), status: 'ordinary', description: text}, ...this.records]
+    this.records = [{id: Date.now(), status: Status.ordinary, description: text}, ...this.records]
   }
 
   deleteRecord(id: number) {

@@ -1,11 +1,10 @@
-// export enum Status {
-//   ordinary = 'обычная',
-//   important = 'важная',
-//   completed = 'выполненная'
-// }
-export type Status = 'ordinary' | 'important' | 'completed'
+export enum Status {
+  ordinary = 'обычная',
+  important = 'важная',
+  completed = 'выполненная'
+}
 export class RecordItem {
   id: number = Date.now()
-  status: Status = 'ordinary'
+  status: Status = Status.ordinary
   description: string = ''
 }
