@@ -23,7 +23,7 @@ export class RecordService {
     this.records = this.records.filter(record => record.id !== id)
   }
 
-  editRecordStatus(id: number, newStatus: Status) {
+  editRecordStatus({newStatus, id}: {id: number, newStatus: Status}) {
     for (let record of this.records) {
       if (record.id === id) {
         record.status = newStatus

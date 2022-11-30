@@ -2,7 +2,10 @@
   <app-search-panel (searchEvent)="searchRecords($event)"
                     (cancelSearchEvent)="cancelSearchRecords()"
   ></app-search-panel>
-  <app-records-list [records]="recordService.currentRecords"></app-records-list>
+  <app-records-list [records]="recordService.currentRecords"
+                    (changeStatusEvent)="editRecordStatus($event)"
+  >
+  </app-records-list>
   <app-add-form (addEvent)="addTask($event)"></app-add-form>
 </div>
 

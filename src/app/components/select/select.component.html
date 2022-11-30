@@ -1,0 +1,7 @@
+<select [(ngModel)]="statusRecord" name="select-value"
+        (change)="changeStatusHandler()"
+>
+  <option [value]="'обычная'">обычная</option>
+  <option [value]="'важная'">важная</option>
+  <option [value]="'выполненная'">выполненная</option>
+</select>

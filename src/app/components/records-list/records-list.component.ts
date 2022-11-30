@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {RecordItem} from "../../models/record";
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {RecordItem, Status} from "../../models/record";
 
 @Component({
   selector: 'app-records-list',
@@ -11,5 +11,11 @@ export class RecordsListComponent implements OnInit{
   constructor() {}
   @Input()
   records!: Array<RecordItem>
+  @Output()
+  changeStatusEvent = new EventEmitter()
+
+  editStatus(obj: {newStatus: Status, id: number}) {
+    this.changeStatusEvent.emit(obj)
+  }
 }
 

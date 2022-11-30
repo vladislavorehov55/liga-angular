@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ISearchFormFields, RecordService} from "../../services/record.service";
+import {Status} from "../../models/record";
 
 @Component({
   selector: 'app-page',
@@ -18,5 +19,8 @@ export class PageComponent implements OnInit {
   }
   cancelSearchRecords() {
     this.recordService.cancelSearchRecords()
+  }
+  editRecordStatus(obj: {newStatus: Status, id: number}) {
+    this.recordService.editRecordStatus(obj)
   }
 }

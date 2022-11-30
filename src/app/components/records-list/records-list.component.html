@@ -1,3 +1,7 @@
+<div *ngFor="let record of records" class="recordItemContainer">
+  <app-record-item  [record]="record"></app-record-item>
+  <app-select [statusRecord]="record.status"
+              (changeStatusEvent)="editStatus({newStatus: $event, id: record.id})"
+  ></app-select>
+</div>
 
-<app-record-item *ngFor="let record of records" [record]="record">
-</app-record-item>
