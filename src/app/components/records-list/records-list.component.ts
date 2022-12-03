@@ -18,5 +18,8 @@ export class RecordsListComponent implements OnInit{
   editStatus(obj: {newStatus: Status, id: number}) {
     this.changeStatusEvent.emit(obj)
   }
+  identify(index: number, item: RecordItem) {
+    return item.id
+  }
 }
 

@@ -1,4 +1,4 @@
-<div *ngFor="let record of records" class="recordItemContainer">
+<div *ngFor="let record of records; trackBy:identify" class="recordItemContainer">
   <app-record-item  [record]="record"></app-record-item>
   <div class="btnsBlock">
     <app-select [statusRecord]="record.status"
