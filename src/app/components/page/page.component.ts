@@ -10,7 +10,10 @@ import {Status} from "../../models/record";
 })
 export class PageComponent implements OnInit {
   ngOnInit() {}
-  constructor(public recordService: RecordService) {}
+  constructor(private _recordService: RecordService) {}
+  get recordService() {
+    return this._recordService
+  }
   addTask(task: string) {
     this.recordService.addRecord(task)
   }

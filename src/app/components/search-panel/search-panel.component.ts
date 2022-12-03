@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Status} from "../../models/record";
 
 @Component({
@@ -6,9 +6,14 @@ import {Status} from "../../models/record";
   templateUrl: './search-panel.component.html',
   styleUrls: ['./search-panel.component.scss']
 })
-export class SearchPanelComponent implements OnInit{
-  ngOnInit() { }
-  inputValue: string | ''  = ''
+export class SearchPanelComponent {
+  options: Array<[string, Status | '']> = [
+    ['без', ''],
+    ['обычные', Status.ordinary],
+    ['важные', Status.important],
+    ['выполненные', Status.completed]
+  ]
+  inputValue: string = ''
   selectedValue: Status | '' = ''
   @Output()
   public searchEvent = new EventEmitter()

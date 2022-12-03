@@ -6,10 +6,7 @@
   >
   <div>
     <select [(ngModel)]="selectedValue" name="select-value">
-      <option [value]="''" >без</option>
-      <option [value]="'обычная'">обычные</option>
-      <option [value]="'важная'">важные</option>
-      <option [value]="'выполненная'">выполненные</option>
+      <option *ngFor="let option of options" [value]="option[1]">{{option[0]}}</option>
     </select>
   </div>
   <div class="btnsWrapper">
