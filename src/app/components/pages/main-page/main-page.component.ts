@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ISearchFormFields, RecordService} from "../../../services/record.service";
+import {ISearchFormFields, RecordService} from "../../../services/record/record.service";
 import {Status} from "../../../models/record";
 
 @Component({

@@ -1,5 +1,5 @@
-import {records} from "../data/records";
-import {RecordItem, Status} from "../models/record";
+import {records} from "../../data/records";
+import {RecordItem, Status} from "../../models/record";
 
 export interface ISearchFormFields {
   inputValue: string
