@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {ISearchFormFields, RecordService} from "../../services/record.service";
-import {Status} from "../../models/record";
+import { Component } from '@angular/core';
+import {ISearchFormFields, RecordService} from "../../../services/record.service";
+import {Status} from "../../../models/record";
 
 @Component({
-  selector: 'app-page',
-  templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss'],
+  selector: 'app-main-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.scss'],
   providers: [RecordService]
 })
-export class PageComponent implements OnInit {
-  ngOnInit() {}
+export class MainPageComponent {
   constructor(private _recordService: RecordService) {}
   get recordService() {
     return this._recordService
