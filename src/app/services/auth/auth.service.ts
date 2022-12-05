@@ -19,6 +19,7 @@ export class AuthService {
         map((res) => {
           if (res.token) {
             localStorage.setItem('meetups_app_auth_token', res.token)
+            return res.token
           }
           return null
         })
