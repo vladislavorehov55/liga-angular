@@ -4,6 +4,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PageModule} from "./components/page/page.module";
 import {AuthPageModule} from "./components/pages/auth-page/auth-page.module";
+import {AboutPageModule} from "./components/pages/about-page/about-page.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {AuthPageModule} from "./components/pages/auth-page/auth-page.module";
     BrowserModule,
     AppRoutingModule,
     PageModule,
-    AuthPageModule
+    AuthPageModule,
+    AboutPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
