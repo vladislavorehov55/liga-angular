@@ -3,18 +3,19 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {map} from "rxjs";
 import {IUser} from "../../models/user";
+import {EnvironmentService} from "../environment/environment.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = 'https://api.fit-meetups.ru'
+  baseUrl: string = `${this.environmentService.environment.apiUrl}/auth`
 
-  constructor(private http: HttpClient, private routes: Router) {
+  constructor(private http: HttpClient, private routes: Router, private environmentService: EnvironmentService ) {
   }
 
   login(email: string, password: string) {
-    return this.http.post<{ token: string }>(`${this.baseUrl}/auth/login`, {email, password})
+    return this.http.post<{ token: string }>(`${this.baseUrl}/login`, {email, password})
       .pipe(
         map((res) => {
           if (res.token) {
@@ -24,7 +25,6 @@ export class AuthService {
           return null
         })
       )
-
   }
 
   logout() {

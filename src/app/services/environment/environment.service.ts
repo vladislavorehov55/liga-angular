@@ -1,14 +1,17 @@
-import {Inject, Injectable, InjectionToken, Optional} from '@angular/core';
+import {InjectionToken, Inject, Injectable} from '@angular/core';
 import {IEnvironment} from "../../models/environment-interface";
 
-export const ENVIRONMENT = new InjectionToken<{ [key: string]: any }>('environment');
+export const ENVIRONMENT = new InjectionToken<IEnvironment>('environment');
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EnvironmentService {
-  private readonly environment: IEnvironment | null | {}
-  constructor(@Optional() @Inject(ENVIRONMENT) environment: IEnvironment) {
-    this.environment = environment !== null ? environment : {};
+  private readonly _environment: IEnvironment
+
+  constructor(@Inject(ENVIRONMENT) _environment: IEnvironment) {
+    this._environment = _environment
   }
+  get environment() {
+    return this._environment
+  }
+
 }
