@@ -5,7 +5,8 @@ import {AppComponent} from './app.component';
 import {MainPageModule} from "./components/pages/main-page/main-page.module";
 import {AuthPageModule} from "./components/pages/auth-page/auth-page.module";
 import {AboutPageModule} from "./components/pages/about-page/about-page.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {JwtInterceptor} from "./interceptors/jwt.interceptor";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,11 @@ import {HttpClientModule} from "@angular/common/http";
     AboutPageModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
