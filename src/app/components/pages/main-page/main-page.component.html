@@ -2,7 +2,7 @@
   <app-search-panel (searchEvent)="searchRecords($event)"
                     (cancelSearchEvent)="cancelSearchRecords()"
   ></app-search-panel>
-  <app-records-list [records]="recordService.currentRecords"
+  <app-records-list [records]="currentRecords"
                     (changeStatusEvent)="editRecordStatus($event)"
                     (deleteRecordEvent)="deleteRecord($event)"
   >

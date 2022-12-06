@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ISearchFormFields, RecordService} from "../../../services/record/record.service";
 import {Status} from "../../../models/record";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-main-page',
@@ -8,24 +9,30 @@ import {Status} from "../../../models/record";
   styleUrls: ['./main-page.component.scss'],
   providers: [RecordService]
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
   constructor(private _recordService: RecordService) {}
-  get recordService() {
-    return this._recordService
+
+  ngOnInit() {
+    this._recordService.getRecords()
   }
+  get currentRecords() {
+    return this._recordService.currentRecords
+  }
+
+
   addTask(task: string) {
-    this.recordService.addRecord(task)
+    this._recordService.addRecord(task)
   }
   searchRecords(obj: ISearchFormFields) {
-    this.recordService.searchRecords(obj)
+    this._recordService.searchRecords(obj)
   }
   cancelSearchRecords() {
-    this.recordService.cancelSearchRecords()
+    this._recordService.cancelSearchRecords()
   }
   editRecordStatus(obj: {newStatus: Status, id: number}) {
-    this.recordService.editRecordStatus(obj)
+    this._recordService.editRecordStatus(obj)
   }
   deleteRecord(id: number) {
-    this.recordService.deleteRecord(id)
+    this._recordService.deleteRecord(id)
   }
 }

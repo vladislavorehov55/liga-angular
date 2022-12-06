@@ -4,6 +4,7 @@ import { MainPageComponent } from './main-page.component';
 import {RecordsListModule} from "../../records-list/records-list.module";
 import {AddFormModule} from "../../add-form/add-form.module";
 import {SearchPanelModule} from "../../search-panel/search-panel.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -15,7 +16,8 @@ import {SearchPanelModule} from "../../search-panel/search-panel.module";
     CommonModule,
     RecordsListModule,
     AddFormModule,
-    SearchPanelModule
+    SearchPanelModule,
+    HttpClientModule
   ],
   exports: [
     MainPageComponent
