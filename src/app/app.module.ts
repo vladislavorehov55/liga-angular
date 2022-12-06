@@ -7,10 +7,11 @@ import {AuthPageModule} from "./components/pages/auth-page/auth-page.module";
 import {AboutPageModule} from "./components/pages/about-page/about-page.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {JwtInterceptor} from "./interceptors/jwt.interceptor";
+import {HeaderModule} from "./components/header/header.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +19,8 @@ import {JwtInterceptor} from "./interceptors/jwt.interceptor";
     MainPageModule,
     AuthPageModule,
     AboutPageModule,
-    HttpClientModule
+    HttpClientModule,
+    HeaderModule
   ],
   providers: [
     {

@@ -1,0 +1,24 @@
+<header class="header" *ngIf="user">
+  <nav>
+    <ul class="navList">
+      <li class="navItem">
+        <a class="navLink"
+           routerLink=""
+           routerLinkActive="activeLink"
+           [routerLinkActiveOptions]="{exact:true}"
+        >
+          Записи
+        </a>
+      </li>
+      <li class="navItem">
+        <a class="navLink"
+           routerLink="/about"
+           routerLinkActive="activeLink"
+        >
+          О приложении
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <button class="btnLogout" (click)="logout()">Выйти</button>
+</header>
