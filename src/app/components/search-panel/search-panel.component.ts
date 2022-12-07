@@ -21,12 +21,10 @@ export class SearchPanelComponent {
   @Output()
   public cancelSearchEvent = new EventEmitter()
   search() {
-    if (!this.inputValue && !this.selectedValue) {
-      return
-    }
     this.searchEvent.emit({inputValue: this.inputValue || null, selectedValue: this.selectedValue})
   }
   cancelSearch() {
+    if (!this.inputValue && !this.selectedValue) return
     this.inputValue = ''
     this.selectedValue = ''
     this.cancelSearchEvent.emit()

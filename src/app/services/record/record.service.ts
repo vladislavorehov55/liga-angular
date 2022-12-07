@@ -5,7 +5,7 @@ import {map, Observable} from "rxjs";
 
 export interface ISearchFormFields {
   inputValue: string
-  selectedValue: Status
+  selectedValue: Status | ''
 }
 
 @Injectable()
@@ -59,7 +59,13 @@ export class RecordService {
   }
 
   searchRecords({inputValue, selectedValue}: ISearchFormFields) {
-
+    if (!inputValue && selectedValue === '' && !this.searchedRecords) {
+      return
+    }
+    if (!inputValue && selectedValue === '' && this.searchedRecords) {
+      this.searchedRecords = null
+      return
+    }
     const regexp = new RegExp(inputValue, 'i')
     this.searchedRecords = this.records.filter(record => {
       return record.status === selectedValue || record.description.match(regexp)
