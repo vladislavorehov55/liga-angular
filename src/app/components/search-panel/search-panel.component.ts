@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
 import {Status} from "../../models/record";
 
 @Component({
   selector: 'app-search-panel',
   templateUrl: './search-panel.component.html',
-  styleUrls: ['./search-panel.component.scss']
+  styleUrls: ['./search-panel.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchPanelComponent {
   options: Array<[string, Status | '']> = [

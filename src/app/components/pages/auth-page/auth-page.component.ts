@@ -1,11 +1,12 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {AuthService} from "../../../services/auth/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-auth-page',
   templateUrl: './auth-page.component.html',
-  styleUrls: ['./auth-page.component.scss']
+  styleUrls: ['./auth-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthPageComponent {
   email: string = ''
@@ -24,7 +25,4 @@ export class AuthPageComponent {
       }
     })
   }
-
-
-
 }

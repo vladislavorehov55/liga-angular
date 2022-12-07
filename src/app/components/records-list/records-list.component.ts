@@ -1,10 +1,11 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {RecordItem, Status} from "../../models/record";
 
 @Component({
   selector: 'app-records-list',
   templateUrl: './records-list.component.html',
   styleUrls: ['./records-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecordsListComponent implements OnInit{
   ngOnInit() {}
@@ -20,6 +21,11 @@ export class RecordsListComponent implements OnInit{
   }
   identify(index: number, item: RecordItem) {
     return item.id
+  }
+
+  get decorator(){
+    console.log('a')
+    return true
   }
 }
 

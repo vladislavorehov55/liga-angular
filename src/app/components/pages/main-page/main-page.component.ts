@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {ISearchFormFields, RecordService} from "../../../services/record/record.service";
 import {Status} from "../../../models/record";
 import {HttpClient} from "@angular/common/http";
@@ -7,7 +7,9 @@ import {HttpClient} from "@angular/common/http";
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
-  providers: [RecordService]
+  providers: [RecordService],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class MainPageComponent implements OnInit {
   constructor(private _recordService: RecordService) {}
@@ -16,6 +18,7 @@ export class MainPageComponent implements OnInit {
     this._recordService.getRecords()
   }
   get currentRecords() {
+    console.log('fg')
     return this._recordService.currentRecords
   }
 

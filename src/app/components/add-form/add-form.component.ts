@@ -1,9 +1,10 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-add-form',
   templateUrl: './add-form.component.html',
-  styleUrls: ['./add-form.component.scss']
+  styleUrls: ['./add-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddFormComponent implements OnInit {
   ngOnInit() {}

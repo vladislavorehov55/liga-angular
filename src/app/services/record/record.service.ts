@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {ChangeDetectorRef, Injectable} from "@angular/core";
 import {RecordItem, Status} from "../../models/record";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
@@ -13,18 +13,20 @@ export class RecordService {
   private records: Array<RecordItem> = []
   private searchedRecords: Array<RecordItem> | null = null
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {
   }
+
 
   get currentRecords() {
     return this.searchedRecords ? this.searchedRecords : this.records
   }
 
   getRecords() {
-    this.http.get("assets/todo-list.json").pipe(map((data: any) => {
+    this.http.get<{recordsList: RecordItem[]}>("assets/todo-list.json").pipe(map((data) => {
       return data.recordsList
     })).subscribe((data: RecordItem[]) => {
       this.records = data
+      this.cdr.detectChanges()
     })
 
   }
@@ -38,10 +40,10 @@ export class RecordService {
   }
 
   editRecordStatus({newStatus, id}: { id: number, newStatus: Status }) {
-    for (let record of this.records) {
-      if (record.id === id) {
-        record.status = newStatus
-        return
+    for (let i = 0; i < this.records.length; i++) {
+      if (this.records[i].id === id) {
+        this.records[i] = {...this.records[i], status: newStatus}
+        break
       }
     }
   }
