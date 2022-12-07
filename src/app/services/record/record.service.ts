@@ -10,18 +10,28 @@ export interface ISearchFormFields {
 
 @Injectable()
 export class RecordService {
-  private records: Array<RecordItem> = []
-  private searchedRecords: Array<RecordItem> | null = null
+  private _records: Array<RecordItem> = []
+  private _searchedRecords: Array<RecordItem> | null = null
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {
   }
 
-
-  get currentRecords() {
-    return this.searchedRecords ? this.searchedRecords : this.records
+  get records() {
+    return this._records
+  }
+  set records(data) {
+    this._records = data
+  }
+  get searchedRecords() {
+    return this._searchedRecords
+  }
+  set searchedRecords(data) {
+    this._searchedRecords = data
   }
 
-  getRecords() {
+
+
+  getDataRecords() {
     this.http.get<{recordsList: RecordItem[]}>("assets/todo-list.json").pipe(map((data) => {
       return data.recordsList
     })).subscribe((data: RecordItem[]) => {
@@ -49,6 +59,7 @@ export class RecordService {
   }
 
   searchRecords({inputValue, selectedValue}: ISearchFormFields) {
+
     const regexp = new RegExp(inputValue, 'i')
     this.searchedRecords = this.records.filter(record => {
       return record.status === selectedValue || record.description.match(regexp)

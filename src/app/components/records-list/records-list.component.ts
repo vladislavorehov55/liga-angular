@@ -23,8 +23,8 @@ export class RecordsListComponent implements OnInit{
     return item.id
   }
 
-  get decorator(){
-    console.log('a')
+  get getter(){
+    console.log('records-list')
     return true
   }
 }

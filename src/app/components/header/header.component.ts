@@ -14,7 +14,7 @@ export class HeaderComponent  {
   constructor(private authService: AuthService) {}
 
   get user() {
-    console.log('asss')
+    // console.log('asss')
     return this.authService.user
   }
 

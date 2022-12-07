@@ -15,11 +15,12 @@ export class MainPageComponent implements OnInit {
   constructor(private _recordService: RecordService) {}
 
   ngOnInit() {
-    this._recordService.getRecords()
+    this._recordService.getDataRecords()
   }
   get currentRecords() {
     console.log('fg')
-    return this._recordService.currentRecords
+    const {searchedRecords, records} = this._recordService
+    return searchedRecords ? searchedRecords : records
   }
 
 
